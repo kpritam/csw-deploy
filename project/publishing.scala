@@ -24,19 +24,6 @@ object PublishBintray extends AutoPlugin {
   )
 }
 
-object PublishGithub extends AutoPlugin {
-  import com.typesafe.sbt.sbtghpages.GhpagesPlugin
-  import GhpagesPlugin.autoImport._
-  import com.typesafe.sbt.SbtGit.GitKeys
-
-  override def requires: Plugins = GhpagesPlugin
-
-  override def projectSettings: Seq[Setting[_]] = Seq(
-    GitKeys.gitRemoteRepo := "git@github.com:tmtsoftware/csw-prod.git",
-    ghpagesNoJekyll := true
-  )
-}
-
 object DeployApp extends AutoPlugin {
   import com.typesafe.sbt.packager.SettingsHelper
   import com.typesafe.sbt.packager.universal.UniversalPlugin

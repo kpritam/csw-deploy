@@ -8,7 +8,7 @@ object Libs {
 }
 
 object TMT {
-  val Version = "0.1.2+951-e63f6d80"
+  val Version = "0.1.2+958-e9dcecea"
 
   val `csw-framework` = "org.tmt" %% "csw-framework" % Version
   val `vslice` = "org.tmt" %% "csw-vslice" % Version
