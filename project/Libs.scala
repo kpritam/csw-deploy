@@ -11,5 +11,5 @@ object TMT {
   val Version = "0.1.2+958-e9dcecea"
 
   val `csw-framework` = "org.tmt" %% "csw-framework" % Version
-  val `vslice` = "org.tmt" %% "csw-vslice" % Version
+  val `csw-vslice`    = "org.tmt" %% "csw-vslice"    % Version
 }

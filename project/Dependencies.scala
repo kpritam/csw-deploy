@@ -4,7 +4,7 @@ object Dependencies {
 
   val CswDeploy = Seq(
     TMT.`csw-framework`,
-    TMT.`vslice`,
+    TMT.`csw-vslice`,
     Libs.`scalatest` % Test
   )
 
