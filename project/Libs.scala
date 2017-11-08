@@ -8,8 +8,6 @@ object Libs {
 }
 
 object TMT {
-  val Version = "0.1.2+958-e9dcecea"
-
-  val `csw-framework` = "org.tmt" %% "csw-framework" % Version
-  val `csw-vslice`    = "org.tmt" %% "csw-vslice"    % Version
+  val `nfiraos-subsystem` = "org.tmt" %% "csw-vslice" % "0.1.2+964-3c3abb07"
+  val `iris-subsystem`    = "org.tmt" %% "csw-vslice" % "0.1.2+964-3c3abb07"
 }

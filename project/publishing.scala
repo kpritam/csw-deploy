@@ -1,6 +1,8 @@
 import com.typesafe.sbt.packager.archetypes.JavaAppPackaging
 import sbt.Keys._
 import sbt._
+import sbtbuildinfo.BuildInfoPlugin
+import sbtbuildinfo.BuildInfoPlugin.autoImport.{buildInfoKeys, buildInfoPackage, BuildInfoKey}
 
 object NoPublish extends AutoPlugin {
   override def requires: Plugins = plugins.JvmPlugin
@@ -29,23 +31,13 @@ object DeployApp extends AutoPlugin {
   import com.typesafe.sbt.packager.universal.UniversalPlugin
   import UniversalPlugin.autoImport.{Universal, UniversalDocs}
 
-  override def requires: Plugins = UniversalPlugin && JavaAppPackaging && PublishBintray && CswBuildInfo
+  override def requires: Plugins = UniversalPlugin && JavaAppPackaging && PublishBintray && BuildInfoPlugin
 
   override def projectSettings: Seq[Setting[_]] =
     SettingsHelper.makeDeploymentSettings(Universal, packageBin in Universal, "zip") ++
     SettingsHelper.makeDeploymentSettings(UniversalDocs, packageBin in UniversalDocs, "zip") ++ Seq(
+      buildInfoKeys := Seq[BuildInfoKey](name, version),
+      buildInfoPackage := "csw.services",
       target in Universal := baseDirectory.value.getParentFile / "target" / "universal"
     )
-}
-
-object CswBuildInfo extends AutoPlugin {
-  import sbtbuildinfo.BuildInfoPlugin
-  import BuildInfoPlugin.autoImport._
-
-  override def requires: Plugins = BuildInfoPlugin
-
-  override def projectSettings: Seq[Setting[_]] = Seq(
-    buildInfoKeys := Seq[BuildInfoKey](name, version),
-    buildInfoPackage := "csw.services"
-  )
 }

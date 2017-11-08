@@ -1,4 +1,3 @@
-import Libs._
 import sbt.Keys._
 import sbt._
 import sbt.plugins.JvmPlugin
@@ -16,9 +15,9 @@ object Common extends AutoPlugin {
     organizationName := "TMT Org",
     scalaVersion := Libs.ScalaVersion,
     concurrentRestrictions in Global += Tags.limit(Tags.All, 1),
-    homepage := Some(url("https://github.com/tmtsoftware/csw-prod")),
+    homepage := Some(url("https://github.com/kpritam/csw-deploy")),
     scmInfo := Some(
-      ScmInfo(url("https://github.com/tmtsoftware/csw-prod"), "git@github.com:tmtsoftware/csw-prod.git")
+      ScmInfo(url("https://github.com/kpritam/csw-deploy"), "git@github.com:kpritam/csw-deploy.git")
     ),
     licenses := Seq(("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))),
     scalacOptions ++= Seq(

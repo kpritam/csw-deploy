@@ -2,10 +2,13 @@ import sbt._
 
 object Dependencies {
 
-  val CswDeploy = Seq(
-    TMT.`csw-framework`,
-    TMT.`csw-vslice`,
+  val NFIRAOS = Seq(
+    TMT.`nfiraos-subsystem`,
     Libs.`scalatest` % Test
   )
 
+  val IRIS = Seq(
+    TMT.`iris-subsystem`,
+    Libs.`scalatest` % Test
+  )
 }
