@@ -11,11 +11,11 @@ lazy val `csw-deploy` = project
 lazy val `csw-nfiraos` = project
   .enablePlugins(DeployApp)
   .settings(
-    libraryDependencies ++= Dependencies.NFIRAOS
+    libraryDependencies ++= NFIRAOS.components
   )
 
 lazy val `csw-iris` = project
   .enablePlugins(DeployApp)
   .settings(
-    libraryDependencies ++= Dependencies.IRIS
+    libraryDependencies ++= IRIS.components
   )
