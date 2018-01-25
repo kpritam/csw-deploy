@@ -6,6 +6,15 @@ lazy val aggregatedProjects: Seq[ProjectReference] = Seq(
 
 lazy val `csw-deploy` = project
   .in(file("."))
+    .enablePlugins(SbtGithubReleasePlugin)
+    .settings(
+      ghreleaseRepoName := "csw-deploy",
+      ghreleaseAssets := Seq(
+        (packageBin in Universal in `csw-nfiraos`).value,
+        (packageBin in Universal in `csw-iris`).value
+      )
+
+    )
   .aggregate(aggregatedProjects: _*)
 
 lazy val `csw-nfiraos` = project
