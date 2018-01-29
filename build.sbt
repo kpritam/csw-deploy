@@ -12,8 +12,9 @@ lazy val `csw-deploy` = project
   .enablePlugins(SbtGithubReleasePlugin)
   .settings(
     coverageReportZipKey := {
-      IO.zip(Path.allSubpaths(crossTarget.value / "scoverage-report"), crossTarget.value / "scoverage-report.zip")
-      crossTarget.value / "scoverage-report.zip"
+      lazy val coverageReportZip = crossTarget.value / "scoverage-report.zip"
+      IO.zip(Path.allSubpaths(crossTarget.value / "scoverage-report"), coverageReportZip)
+      coverageReportZip
     },
 
     ghreleaseRepoName := "csw-deploy",
