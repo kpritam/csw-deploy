@@ -6,10 +6,10 @@ addSbtPlugin("com.eed3si9n"                      % "sbt-buildinfo"          % "0
 resolvers += "Jenkins repo" at "http://repo.jenkins-ci.org/public/"
 addSbtPlugin("ohnosequences" % "sbt-github-release" % "0.5.0")
 
-addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0-RC13")
+addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.0.0")
 classpathTypes += "maven-plugin"
 
-libraryDependencies += "com.trueaccord.scalapb" %% "compilerplugin" % "0.6.6"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin" % "0.7.0-rc6"
 
 scalacOptions ++= Seq(
   "-encoding",

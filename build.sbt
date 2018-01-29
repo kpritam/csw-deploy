@@ -12,8 +12,8 @@ lazy val `csw-deploy` = project
       ghreleaseAssets := Seq(
         (packageBin in Universal in `csw-nfiraos`).value,
         (packageBin in Universal in `csw-iris`).value
-      )
-
+      ),
+      aggregate in githubRelease := false
     )
   .aggregate(aggregatedProjects: _*)
 
