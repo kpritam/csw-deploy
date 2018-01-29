@@ -11,8 +11,8 @@ object Common extends AutoPlugin {
   val detectCycles: SettingKey[Boolean] = settingKey[Boolean]("is cyclic check enabled?")
 
   override lazy val projectSettings: Seq[Setting[_]] = Seq(
-    organization := "org.tmt",
-    organizationName := "TMT Org",
+    organization := "kpritam",
+    organizationName := "kpritam",
     scalaVersion := Libs.ScalaVersion,
     concurrentRestrictions in Global += Tags.limit(Tags.All, 1),
     homepage := Some(url("https://github.com/kpritam/csw-deploy")),
@@ -47,7 +47,7 @@ object Common extends AutoPlugin {
     version := {
       sys.props.get("prod.publish") match {
         case Some("true") => version.value
-        case _            => "0.1-SNAPSHOT"
+        case _            => "0.5-SNAPSHOT"
       }
     },
     isSnapshot := !sys.props.get("prod.publish").contains("true"),

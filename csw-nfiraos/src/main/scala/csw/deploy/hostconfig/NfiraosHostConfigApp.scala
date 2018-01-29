@@ -1,7 +1,9 @@
 package csw.deploy.hostconfig
 
-import csw.apps.hostconfig.HostConfig
-
 object NfiraosHostConfigApp extends App {
-  HostConfig.start("NFIRAOS-Host-Config", args)
+//  HostConfig.start("NFIRAOS-Host-Config", args)
+
+  println("###############################")
+  println("NfiraosHostConfigApp")
+  println("###############################")
 }

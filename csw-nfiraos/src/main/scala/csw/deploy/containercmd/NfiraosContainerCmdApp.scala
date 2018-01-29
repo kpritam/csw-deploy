@@ -1,7 +1,8 @@
 package csw.deploy.containercmd
 
-import csw.apps.containercmd.ContainerCmd
-
 object NfiraosContainerCmdApp extends App {
-  ContainerCmd.start("NFIRAOS-Container-Cmd", args)
+//  ContainerCmd.start("NFIRAOS-Container-Cmd", args)
+  println("###############################")
+  println("NfiraosContainerCmdApp")
+  println("###############################")
 }
